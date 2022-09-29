@@ -11,7 +11,7 @@ export default class BookListContainer extends Component {
     }
   
     render() {
-      const { books, loading, error } = this.props;
+      const { books, loading, error, onAddedToCart } = this.props;
   
       if (loading) {
         return <Spinner />
@@ -21,6 +21,6 @@ export default class BookListContainer extends Component {
         return <ErrorIndicator />
       }
   
-      return <BookList books={books} />;
+      return <BookList books={books} onAddedToCart={onAddedToCart} />;
     }
 }
